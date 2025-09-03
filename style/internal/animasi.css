@@ -1,0 +1,141 @@
+:root {
+  --anim-duration: 1.2s;
+  --anim-ease: ease;
+  --fade-up-offset: 50px;
+  --fade-left-offset: -80px;
+  --fade-right-offset: 80px;
+  --zoom-scale: 0.5;
+  --rotate-deg: -90deg;
+}
+
+/* Base animasi */
+.animasi {
+  opacity: 0;
+  transition: all var(--anim-duration) var(--anim-ease);
+}
+/* Fade Up */
+.animasi.fade-up {
+  transform: translateY(var(--fade-up-offset));
+}
+.animasi.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animasi.fade-up.reverse {
+  opacity: 0;
+  transform: translateY(var(--fade-up-offset));
+}
+
+/* Fade Left */
+.animasi.fade-left {
+  transform: translateX(var(--fade-left-offset));
+}
+.animasi.fade-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.animasi.fade-left.reverse {
+  opacity: 0;
+  transform: translateX(var(--fade-left-offset));
+}
+
+/* Fade Right */
+.animasi.fade-right {
+  transform: translateX(var(--fade-right-offset));
+}
+.animasi.fade-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.animasi.fade-right.reverse {
+  opacity: 0;
+  transform: translateX(var(--fade-right-offset));
+}
+
+/* Zoom */
+.animasi.zoom {
+  transform: scale(var(--zoom-scale));
+}
+.animasi.zoom.show {
+  opacity: 1;
+  transform: scale(1);
+}
+.animasi.zoom.reverse {
+  opacity: 0;
+  transform: scale(var(--zoom-scale));
+}
+
+/* Rotate */
+.animasi.rotate {
+  transform: rotate(var(--rotate-deg));
+}
+.animasi.rotate.show {
+  opacity: 1;
+  transform: rotate(0);
+}
+.animasi.rotate.reverse {
+  opacity: 0;
+  transform: rotate(var(--rotate-deg));
+}
+
+/* === ANIMASI BULAN KHUSUS === */
+/* === ANIMASI BULAN === */
+#bulan {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  opacity: 1;
+  animation: moonMove 800s linear infinite; /* loop terus */
+}
+
+@keyframes moonMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(1200px) translateY(-150px);
+  }
+  100% {
+    transform: translateX(2400px) translateY(0);
+  }
+}
+
+/* === ANIMASI BINTANG === */
+#star-container {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%; /* dua kali lebar bintang */
+  display: flex;
+  animation: starMove 700s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  width: 100vw; /* lebarnya layar */
+  height: auto;
+  object-fit: cover;
+  animation: starGlow 3s ease-in-out infinite;
+  opacity: 1;
+}
+@keyframes starMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* geser satu bintang ke kiri */
+  }
+}
+
+@keyframes starGlow {
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
+  }
+  50% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+  }
+}

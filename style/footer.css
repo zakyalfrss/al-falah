@@ -1,0 +1,73 @@
+
+.body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  max-width: 100%;
+  font-family: inter,poppins;
+  
+}
+
+.footer {
+  display: block;
+  mask-size: 100%;
+  width: 100%;
+  padding: 20px 0;
+  background-color: aliceblue;
+}
+
+.footer .social {
+  text-align: center;
+  padding-bottom: 25px;
+  color: grey;
+}
+
+.footer .social .sosmed a {
+  font-size: 24px;
+  color: #0f0e0e;
+  width: 100px;
+  height: 100px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.footer .social .sosmed a :hover {
+  margin-top: 0;
+  list-style: none;
+  font-size: 23px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+  font-size: 18px;
+  display: inline-block;
+  text-align: center;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  opacity: 0.8;
+  border: none;
+  color: #161515;
+}
+
+.footer ul li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.footer .copyright {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 15px;
+  color: #3d3a3a;
+  font-weight: bold;
+}

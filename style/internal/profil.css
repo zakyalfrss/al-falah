@@ -1,0 +1,61 @@
+.isi-1-profil {
+  background-color: var(--warna1);
+  height: 100vh;
+  width: auto;
+}
+.isi-1 {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+.isi-1 .png {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  right: 0; /* ✅ RATA KANAN */
+  left: auto; /* ✅ NONAKTIFKAN LEFT */
+  pointer-events: none;
+  user-select: none;
+}
+.isi-1 .png img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover; /* biar auto crop */
+  object-position: top; /* posisi crop: bisa 'top', 'bottom', atau 'center' */
+}
+.isi-1-profil .title-profil {
+  display: flex;
+  height: 100vh;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.isi-1-profil .title-profil h1 {
+  text-align: justify;
+  color: var(--warna1);
+  font-size: 80px;
+  padding: 100px;
+}
+.isi-2 {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(40px, 8vw, 100px) clamp(20px, 12vw, 300px) 20px
+    clamp(20px, 12vw, 300px);
+  background-color: var(--warna6);
+  z-index: 100;
+}
+.isi-2-profil .judul {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--warna6);
+}
+.isi-2-profil .judul h1 {
+  color: var(--warna4);
+  text-align: center;
+  font-size: 40px;
+}

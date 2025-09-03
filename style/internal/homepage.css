@@ -1,0 +1,335 @@
+/* Transisi halus antar elemen */
+body,
+nav,
+header,
+.parallax,
+.data ul li {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* =======================
+   📌 NAVBAR
+======================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: var(--bgnav);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(6px);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+header .logo a {
+  display: flex;
+  width: 20px;
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 20px;
+  color: var(--warna1);
+  transition: all 0.5s ease;
+}
+
+nav a:hover {
+  border-radius: 6px;
+  transform: scale(1.2); /* biar ga kebablasan */
+  color: var(--putih);
+  background-color: var(--warna1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* =======================
+   🌙 THEME SWITCH
+======================= */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider background */
+.slider {
+  position: absolute;
+  inset: 0;
+  background-color: var(--warna1);
+  border-radius: 34px;
+  transition: background-color 0.3s ease;
+}
+
+/* Bulatan (selalu solid putih) */
+.slider .thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.4s ease;
+  overflow: hidden;
+}
+
+/* Icon di dalam bulatan */
+.slider .thumb img {
+  width: 16px;
+  height: 16px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Checkbox checked → bulatan geser kanan */
+.theme-switch input:checked + .slider .thumb {
+  left: 32px;
+}
+
+/* Logo crossfade */
+#logo-wrap {
+  position: relative;
+  width: 120px;
+  height: 40px;
+}
+
+#logo-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  transition: opacity 0.5s ease;
+}
+
+#logo-dark {
+  opacity: 0;
+}
+
+body[data-theme="dark"] #logo-dark {
+  opacity: 1;
+}
+body[data-theme="dark"] #logo-light {
+  opacity: 0;
+}
+
+/* =======================
+   📄 CONTENT
+======================= */
+.halaman {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(40px, 8vw, 100px) clamp(20px, 12vw, 300px) 20px
+    clamp(20px, 12vw, 300px);
+  background-color: var(--warna1);
+  z-index: 100;
+}
+
+.data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px;
+  z-index: 1;
+}
+
+.data ul {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  overflow-x: auto; /* Tambahkan ini supaya bisa scroll horizontal */
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch; /* smooth scroll di iOS */
+}
+
+.data ul li {
+  display: flex; /* Ganti dari inline-block ke flex */
+  flex-direction: column;
+  padding: 30px;
+  gap: 10px;
+  text-align: center;
+  background-color: var(--warna2);
+  border-radius: 20px;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+  box-shadow 0.3s ease;
+  min-width: 150px; /* Lebar minimal supaya kotak tidak terlalu kecil */
+  flex-shrink: 0; /* supaya tidak menyusut */
+}
+
+.data ul li h2 {
+  font-size: 80px;
+  text-align: center;
+  color: var(--putih);
+  margin: 0;
+}
+
+.data ul li h3 {
+  font-size: 15px;
+  text-align: center;
+  color: var(--putih);
+  margin: 0;
+}
+
+.data ul li h2,
+.data ul li h3 {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.data ul li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--warna4);
+}
+
+.data ul li:hover h2,
+.data ul li:hover h3 {
+  color: var(--warna2);
+  transform: translateY(-10px);
+}
+
+.isi-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  flex-wrap: wrap;
+}
+
+.img-kiri,
+.img-kanan {
+  flex: 1 1 30%;
+  max-width: 300px;
+  height: auto;
+}
+
+.teks-kiri h1,
+.teks-kanan h1 {
+  margin-bottom: 15px; /* gap antara judul dan paragraf */
+}
+.img-kiri img,
+.img-kanan img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.teks-kiri,
+.teks-kanan {
+  flex: 1 1 60%;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.konten h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.video {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 430px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  /* halaman */
+  .halaman {
+    position: relative; /* Lebih stabil daripada absolute */
+    padding: 20px; /* Cukup buat HP */
+    width: 100%;
+    min-height: auto;
+  }
+  .data ul {
+    flex-direction: column; /* Bikin item tersusun dari atas ke bawah */
+    justify-content: flex-start; /* Item mulai dari atas */
+    align-items: center; /* Tengahin tiap kotak di tengah layar */
+    gap: 15px; /* Jarak antar kotak statistik */
+    width: 100%; /* Pakai lebar penuh container */
+  }
+
+  /* Setiap item statistik (li) */
+  .data ul li {
+    width: 100%; /* Pakai lebar penuh container */
+    max-width: 300px; /* Tapi dibatasi supaya tidak terlalu lebar */
+    padding: 10px; /* Spasi dalam kotak */
+    background-color: var(
+      --warna2
+    ); /* Opsional: biar lebih kelihatan kotaknya */
+    border-radius: 12px; /* Opsional: sudut tumpul */
+    text-align: center; /* Biar isi kotak rata tengah */
+  }
+
+  .data ul li h2 {
+    font-size: 32px; /* Ukuran font sedikit dikecilin biar pas di HP */
+    color: var(--putih); /* Warna teks terang */
+  }
+  .data ul li h3 {
+    .data ul li h2 {
+      font-size: 32px; /* Ukuran font sedikit dikecilin biar pas di HP */
+      color: var(--putih); /* Warna teks terang */
+    }
+  }
+
+  .isi-1 {
+    flex-direction: column; /* ubah jadi vertikal */
+    align-items: center;
+    text-align: center;
+  }
+
+  .img-kanan {
+    order: -1; /* pindah gambar ke atas */
+  }
+
+  .img-kanan img,
+  .img-kiri img {
+    width: 300px; /* ukuran fix */
+    height: 290px; /* tinggi fix */
+    object-fit: cover; /* biar auto crop */
+    object-position: center; /* posisi crop: bisa 'top', 'bottom', atau 'center' */
+  }
+}

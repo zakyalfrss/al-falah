@@ -1,0 +1,149 @@
+/* =======================
+   🌄 PARALLAX BASE
+======================= */
+.parallax {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+/* Wrapper img */
+.img-parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+
+/* Semua gambar dalam parallax kecuali bukit3 */
+.parallax img:not(.bukit3-img) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  object-fit: cover;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+/* Border bawah biar nyatu sama konten */
+.parallax::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--warna1);
+  z-index: 20;
+}
+
+/* Judul di tengah parallax */
+.body-parallax .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: var(--title);
+  font-size: 3rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+}
+.bukit3 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+/* Animasi judul fade + naik */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* =======================
+   🌞 LIGHT / 🌙 DARK MODE
+======================= */
+
+/* Default Light */
+.parallax img.light {
+  display: block;
+  opacity: 1;
+}
+.parallax img.dark {
+  display: none;
+  opacity: 0;
+}
+
+/* Switch ke Dark */
+body[data-theme="dark"] .parallax img.light {
+  display: none;
+  opacity: 0;
+}
+body[data-theme="dark"] .parallax img.dark {
+  display: block;
+  opacity: 1;
+}
+
+/* Efek transisi halus buat bg & bulan/matahari */
+#bg.light,
+#bg.dark,
+#bulan {
+  transition: opacity 0.6s ease;
+}
+
+@media (max-width: 430px) {
+  .parallax {
+    height: 100vh; /* sesuaikan tinggi section */
+    width: 200%;
+    overflow: visible; /* biar konten gak terpotong */
+  }
+
+  .parallax img:not(.bukit3-img) {
+    width: 100%; /* biar gak nge-stretch full */
+    height: 100vh;
+    object-fit: cover;
+    object-position: center; /* gambar geser ke kanan */
+    position: absolute;
+    left: 0; /* atau sesuaikan supaya menjorok */
+  }
+  .body-parallax .title {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* biar teks rata tengah */
+    width: 100%; /* opsional */
+  }
+  #gapura {
+    position: absolute; /* ikut aturan parallax */
+    width: 150%;
+    left: -50px !important; /* override posisi default */
+  }
+  #masjid {
+    display: block;
+    width: 150%;
+    margin-left: -450px;
+  }
+}

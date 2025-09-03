@@ -1,0 +1,60 @@
+/* =======================
+   🎨 WARNA TEMA
+======================= */
+:root {
+  --warna1: #094d68;
+  --warna2: #129990;
+  --warna3: #3ebaae;
+  --warna4: #aee7df;
+  --putih: #fefefe;
+  --title: #094d68;
+  --bg: rgba(0, 212, 148, 0.5);
+  --bgnav: rgba(255, 255, 255, 0.8);
+  --warna5: #95d3e6;
+  --warna6: #537f8c;
+  --logo: url("/img/logo-color.png");
+  transition: all 0.3s ease-in-out;
+}
+
+[data-theme="dark"] {
+  --warna1: #25234a;
+  --warna2: #313154;
+  --warna3: #3b5a7e;
+  --warna4: #b8d2ec;
+  --putih: #ffff;
+  --title: #b8d2ec;
+  --bgnav: rgba(255, 255, 255, 0.5);
+  --bg: rgba(99, 0, 212, 0.5);
+  --logo: url("/img/logo-solid.png");
+  transition: all 0.3s ease-in-out;
+}
+
+/* =======================
+   🔤 FONT GLOBAL
+======================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* =======================
+   🔄 RESET DEFAULT
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease,
+    background-image 0.4s ease;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--warna1);
+}
+
+h1,
+p {
+  text-align: justify;
+  color: var(--putih);
+}
