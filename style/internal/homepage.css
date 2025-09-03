@@ -181,7 +181,7 @@ body[data-theme="dark"] #logo-light {
   border-radius: 20px;
   user-select: none;
   transition: background-color 0.3s ease, transform 0.3s ease,
-  box-shadow 0.3s ease;
+    box-shadow 0.3s ease;
   min-width: 150px; /* Lebar minimal supaya kotak tidak terlalu kecil */
   flex-shrink: 0; /* supaya tidak menyusut */
 }

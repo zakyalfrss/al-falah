@@ -1,15 +1,98 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ponpes Al-Quran Al-Falah</title>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="stylesheet" href="/style/internal/navbar.css" />
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/internal/animasi.css" />
+    <link rel="stylesheet" href="../style/navbar.css" />
+    <link rel="stylesheet" href="/style/internal/instansi.css" />
+    <title>Cinematic Target Navigation</title>
   </head>
   <body>
+    <!-- Background di luar main -->
+    <div class="bg-1"></div>
+
     <div id="navbar"></div>
-    <div class="halaman1"></div>
-    <script src="/js/navbar.js"></script>
+    <main>
+      <div class="overlay"></div>
+      <section data-target="0">
+        <div class="main-text-1">
+          <h1>Hello World</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
+            quaerat voluptatem accusantium, dolorem sed nesciunt earum ipsa ab
+            adipisci quidem sapiente tempora voluptate soluta laudantium
+            delectus! Sint quo natus dolorum!
+          </p>
+        </div>
+        <div class="gambar-tengah-1">
+          <img src="/img/instansi/tengah1.png" alt="" />
+        </div>
+        <div class="gambar-bawah-1">
+          <img src="/img/instansi/bawah1.png" alt="" />
+        </div>
+      </section>
+
+      <section data-target="1">
+        <div class="main-text-1">
+          <h1>Section Dua</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+            enim hic fuga consectetur sequi porro repudiandae ea, beatae et
+            maiores, ex accusamus, omnis temporibus quos esse dolorem
+            reprehenderit quisquam eveniet.
+          </p>
+        </div>
+        <div class="gambar-tengah-1">
+          <img src="/img/instansi/tengah1.png" alt="" />
+        </div>
+        <div class="gambar-bawah-1">
+          <img src="/img/instansi/bawah1.png" alt="" />
+        </div>
+      </section>
+      <section data-target="1">
+        <div class="main-text-1">
+          <h1>Section Dua</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
+            possimus ducimus labore asperiores provident expedita animi eaque,
+            nam accusamus quod, mollitia quaerat, quibusdam numquam enim
+            obcaecati rem earum voluptatem ex.
+          </p>
+        </div>
+        <div class="gambar-tengah-1">
+          <img src="/img/instansi/tengah1.png" alt="" />
+        </div>
+        <div class="gambar-bawah-1">
+          <img src="/img/instansi/bawah1.png" alt="" />
+        </div>
+      </section>
+      <section data-target="1">
+        <div class="main-text-1">
+          <h1>Section Dua</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,
+            distinctio quo nostrum aut tempore esse odit accusamus iure? Alias
+            iste facilis id distinctio commodi tempora ex aliquam vitae quo
+            doloribus!
+          </p>
+        </div>
+        <div class="gambar-tengah-1">
+          <img src="/img/instansi/tengah1.png" alt="" />
+        </div>
+        <div class="gambar-bawah-1">
+          <img src="/img/instansi/bawah1.png" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/animasi.js"></script>
+    <script src="/js/internal/instansi.js"></script>
   </body>
 </html>

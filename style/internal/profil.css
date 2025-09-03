@@ -43,7 +43,7 @@
   min-height: 100vh;
   padding: clamp(40px, 8vw, 100px) clamp(20px, 12vw, 300px) 20px
     clamp(20px, 12vw, 300px);
-  background-color: var(--warna6);
+  background-color: var(--warna1);
   z-index: 100;
 }
 .isi-2-profil .judul {
@@ -52,7 +52,7 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: var(--warna6);
+  background-color: var(--warna1);
 }
 .isi-2-profil .judul h1 {
   color: var(--warna4);

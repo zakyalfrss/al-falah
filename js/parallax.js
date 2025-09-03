@@ -24,7 +24,7 @@ function onScroll() {
 function updateParallax() {
   const y = latestScrollY;
   document.querySelectorAll("[data-speed]").forEach((el) => {
-    if (el.classList.contains("static")) return; //  skip kalau static
+    if (el.classList.contains("static")) return; // ❌ skip kalau static
 
     const speedY = parseFloat(el.getAttribute("data-speed")) || 0;
     const speedX = parseFloat(el.getAttribute("data-speed-x")) || 0;

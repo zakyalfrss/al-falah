@@ -4,9 +4,10 @@ fetch("/user/navbar.html")
   .then((data) => {
     document.getElementById("navbar").innerHTML = data;
 
-    // init fitur
+    // init fitur navbar
     initThemeToggle();
     initHamburgerMenu();
+    setActiveNavLink(); // Menambahkan kelas aktif pada link yang sesuai
   });
 
 // === THEME TOGGLE ===
@@ -57,3 +58,30 @@ function initHamburgerMenu() {
     });
   });
 }
+
+// === Menambahkan Kelas Aktif pada Link Navbar ===
+function setActiveNavLink() {
+  const navLinks = document.querySelectorAll(".nav-l a");
+  const currentPage = window.location.pathname;
+
+  navLinks.forEach((link) => {
+    // Mendapatkan URL dari href link
+    const linkPage = link.getAttribute("href");
+
+    // Jika link URL sesuai dengan URL halaman saat ini, tambahkan kelas active
+    if (currentPage.includes(linkPage)) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
+// menu buttons (optional)
+document.querySelectorAll(".menu button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const idx = parseInt(btn.dataset.target, 10);
+    if (!isNaN(idx)) {
+      goToSection(idx);
+    }
+  });
+});

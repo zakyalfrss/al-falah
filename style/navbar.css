@@ -47,6 +47,18 @@ nav ul li a:hover {
   background-color: var(--warna1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
+/* Menambahkan gaya untuk link aktif */
+nav ul li a.active {
+  color: var(--putih); /* Warna teks aktif */
+  background-color: var(--warna1); /* Warna latar belakang saat aktif */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Efek bayangan jika aktif */
+  border-radius: 6px;
+}
+
+nav ul li a.active:hover {
+  transform: scale(1.2); /* Hover effect tetap ada di link aktif */
+  background-color: var(--warna1); /* Warna latar belakang aktif tetap */
+}
 
 /* =======================
    🌙 THEME SWITCH
@@ -159,7 +171,7 @@ body[data-theme="dark"] #logo-light {
     top: 70px;
     right: 20px;
     display: none;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 1);
     backdrop-filter: blur(6px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     border-radius: 8px;

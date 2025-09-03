@@ -12,6 +12,7 @@
   --bgnav: rgba(255, 255, 255, 0.8);
   --warna5: #95d3e6;
   --warna6: #537f8c;
+  --bg2: #094d6856;
   --logo: url("/img/logo-color.png");
   transition: all 0.3s ease-in-out;
 }
@@ -25,6 +26,7 @@
   --title: #b8d2ec;
   --bgnav: rgba(255, 255, 255, 0.5);
   --bg: rgba(99, 0, 212, 0.5);
+  --bg2: #25234a8a;
   --logo: url("/img/logo-solid.png");
   transition: all 0.3s ease-in-out;
 }
@@ -48,8 +50,6 @@
 
 html,
 body {
-  margin: 0;
-  overflow-x: hidden;
   background-color: var(--warna1);
 }
 

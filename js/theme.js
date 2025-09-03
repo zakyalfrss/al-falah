@@ -16,7 +16,7 @@ toggleCheckbox.addEventListener("change", () => {
   document.body.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
 
-  // Fade cross icon
+  // Fade cross icon (tanpa tembus bg)
   themeIcon.style.opacity = 0;
   setTimeout(() => {
     themeIcon.src =
